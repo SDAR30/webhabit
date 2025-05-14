@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website Time Tracker - Options</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Website Time Tracker</h1>
+      <div class="filters">
+        <select id="time-range">
+          <option value="today">Today</option>
+          <option value="yesterday">Yesterday</option>
+          <option value="this-week">This Week</option>
+          <option value="this-month">This Month</option>
+          <option value="all-time">All Time</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="stats-overview">
+      <div class="stat-card">
+        <div class="stat-title">Total Time</div>
+        <div id="total-time" class="stat-value">0 min</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Websites Visited</div>
+        <div id="websites-count" class="stat-value">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Most Visited</div>
+        <div id="most-visited" class="stat-value">None</div>
+      </div>
+    </div>
+    
+    <div class="data-container">
+      <div class="chart-container">
+        <h2>Time Distribution</h2>
+        <div id="pie-chart" class="chart">
+          <p class="no-data">Chart will appear here when data is available</p>
+        </div>
+      </div>
+      
+      <div class="table-container">
+        <h2>Website Details</h2>
+        <div class="table-actions">
+          <input type="text" id="search-input" placeholder="Search websites...">
+          <button id="export-btn">Export Data</button>
+        </div>
+        <table id="website-table">
+          <thead>
+            <tr>
+              <th>Website</th>
+              <th>Time Spent</th>
+              <th>Visits</th>
+              <th>Last Visit</th>
+            </tr>
+          </thead>
+          <tbody id="website-data">
+            <tr>
+              <td colspan="4" class="no-data">No data available</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <div class="settings-section">
+      <h2>Settings</h2>
+      <div class="setting-group">
+        <label>
+          <input type="checkbox" id="track-incognito">
+          Track incognito browsing
+        </label>
+      </div>
+      <div class="setting-group">
+        <label>
+          <input type="checkbox" id="show-notifications">
+          Show usage notifications
+        </label>
+      </div>
+      <div class="setting-group">
+        <label for="idle-timeout">Idle timeout (seconds):</label>
+        <input type="number" id="idle-timeout" min="15" max="300" value="60">
+      </div>
+      <div class="setting-group">
+        <button id="clear-data-btn" class="danger-btn">Clear All Data</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="options.js"></script>
+</body>
+</html>
